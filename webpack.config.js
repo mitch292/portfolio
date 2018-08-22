@@ -1,21 +1,21 @@
 const path = require('path');
 
 module.exports = {
-  entry: './js/main.js',
+  entry: './js/main.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   module: {
     rules: [{
-      test: /\.js$/,
+      test: /\.(js|jsx)$/,
       exclude: /node_modules/,
-      use: {
+      use: [{
         loader: 'babel-loader',
         options: {
           presets: ['react']
         }
-      }
+      }]
     }]
   }
 }
