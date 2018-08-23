@@ -9,20 +9,24 @@ Enzyme.configure({ adapter: new Adapter() });
 
 const myWork = [
   {
-    title: "FlixMix",
+    title: 'FlixMix',
     image: {
-      desc: "FlixMix",
-      src: "images/flixmix.png",
-      comment: ""
-    }
+      desc: 'FlixMix',
+      src: 'images/flixmix.png',
+      comment: ''
+    },
+    href: 'http://flixmix.andrewmitchell.io',
+    projectDescription: 'pending'
   },
   {
-    title: "Highlights",
+    title: 'Highlights',
     image: {
-      desc: "Highlights",
-      src: "images/filterhighlights.png",
-      comment: ""
-    }
+      desc: 'Highlights',
+      src: 'images/filterhighlights.png',
+      comment: ''
+    },
+    href: 'http://highlights.andrewmitchell.io',
+    projectDescription: 'pending'
   }
 ]
 
@@ -31,17 +35,26 @@ describe('ExampleWork component', () => {
   let component = shallow(<ExampleWork work={myWork}/>)
   
   it('Should be a "section" element', () => {
-    expect(component.type()).toEqual('section');
+    expect(component.type()).toEqual('div');
   });
 
   it('Should contain as many children as there are work examples', () => {
     expect(component.find("ExampleWorkBubble").length).toEqual(myWork.length);
   });
 
+
+  it('Should allow the modal to open and close', () => {
+    component.instance().openModal();
+    expect(component.instance().state.modalOpen).toBe(true);
+    component.instance().closeModal();
+    expect(component.instance().state.modalOpen).toBe(false);
+  })
+
 });
 
 describe('ExampleWorkBubble component', () => {
-  let component = shallow(<ExampleWorkBubble title={myWork[1].title} image={myWork[1].image} />)
+  let mockOpenModalFunc = jest.fn();
+  let component = shallow(<ExampleWorkBubble example={myWork[1]} openModal={mockOpenModalFunc} />)
   let images = component.find("img");
 
   it('Should contain a single "img" element', () => {
@@ -50,6 +63,11 @@ describe('ExampleWorkBubble component', () => {
 
   it('Should have the image src set correctly', () => {
     expect(images.props('src').src).toEqual(myWork[1].image.src);
+  })
+
+  it('Should call the openModal function when clicked', () => {
+    component.find(".section__exampleWrapper").simulate('click');
+    expect(mockOpenModalFunc).toHaveBeenCalled();
   })
 
 });
