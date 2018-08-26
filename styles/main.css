@@ -20,12 +20,12 @@
     rgb(236, 240, 241)
 */
 
-.background--skyBlue {
-  background-color: rgb(52, 152, 219);
+.background--skyGrey {
+  background-color: rgba(12, 35, 64, 0.65)
 }
 
-.color--skyBlue {
-  color: rgb(52, 152, 219);
+.color--skyGrey {
+  color: rgba(12, 35, 64, 0.65);
 }
 
 .color--cloud {
@@ -227,5 +227,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .modal__image {
-  opacity: 0.2;
+  opacity: 0.1;
+}
+
+.architecture-image {
+  width: 60%;
+  border-style: groove;
 }

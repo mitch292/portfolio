@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ExampleWork from './example-work.jsx';
+import { flixMix, highlights, study } from './projectDescriptions.js';
 
 const myWork = [
   {
@@ -11,7 +12,7 @@ const myWork = [
       comment: ''
     },
     href: 'http://flixmix.andrewmitchell.io',
-    projectDescription: 'pending'
+    projectDescription: flixMix
   },
   {
     title: 'Highlights',
@@ -21,7 +22,7 @@ const myWork = [
       comment: ''
     },
     href: 'http://highlights.andrewmitchell.io',
-    projectDescription: 'pending'
+    projectDescription: highlights
   },
   {
     title: 'Stud(y)',
@@ -31,7 +32,7 @@ const myWork = [
       comment: ''
     },
     href: 'http://study.andrewmitchell.io',
-    projectDescription: 'pending'
+    projectDescription: study
   }
 ]
 

@@ -13,7 +13,7 @@
 
   <body>
     <main class="overflow--auto">
-      <h1 class="color--skyBlue section__heading--largest">
+      <h1 class="color--skyGrey section__heading--largest">
         Andrew Mitchell
       </h1>
 
@@ -24,7 +24,7 @@
 
         <!-- Link to Linked In profile -->
         <li class="socialWrapper">
-          <a class="color--skyBlue social"
+          <a class="color--skyGrey social"
              title="LinkedIn Profile"
              target="_blank"
              href="https://www.linkedin.com/in/andrew-p-mitchell/">
@@ -33,8 +33,8 @@
         </li>
 
         <!-- Link to GitHub profile -->
-        <li class="socialWrapper color--skyBlue">
-          <a class="social color--skyBlue"
+        <li class="socialWrapper color--skyGrey">
+          <a class="social color--skyGrey"
              title="GitHub Profile"
              target="_blank"
              href="https://github.com/mitch292">
@@ -44,7 +44,7 @@
 
         <!-- Link to resume, probably a .pdf -->
         <li class="socialWrapper">
-          <a class="social color--skyBlue"
+          <a class="social color--skyGrey"
              title="Resume"
              href="Resume.pdf">
             <i class="fa fa-file-text"></i>
@@ -53,15 +53,14 @@
       </ul>
     </main>
 
-    <section class="background--skyBlue section">
+    <section class="background--skyGrey section">
       <h2 class="color--cloud margin--none section__text--centered">
         Portfolio
       </h2>
     </section>
     <div id="example-work"></div>
     
-    
-    <section class="background--skyBlue section">
+    <section class="background--skyGrey section">
       <h2 class="color--cloud margin--none section__text--centered">
         About Me
       </h2>
@@ -69,12 +68,40 @@
 
     <section class="section section--alignCentered section--description">
       <p class="color--darkgrey section__description">
-        I am a full stack software engineer always eager to learn new skills! 
-        I am passionate about building clean and simple solutions to complex problems.
+        I am a full stack software engineer with a passion for learning and expanding my skills. 
+        I love to build clean, simple, elegant solutions to complex problems.
         I've been involed in the development of dozens of software products deployed to to 
-        on premise architecture and the cloud. I'm eager to contribute to a development team and 
+        on premise architecture and the cloud. In the development of these products I've acted as
+        a software engineer, a project manager, and a technical analyst, so I'm able to see look at 
+        an application or project from various perspectives easily.  I'm eager to contribute to a development team and 
         start building some awesome products! 
       </p>
+
+
+      <section class="background--skyGrey section">
+        <h2 class="color--cloud margin--none section__text--centered">
+          About My Portfolio 
+        </h2>
+      </section>
+  
+      <section class="section section--alignCentered section--description">
+        <p class="color--darkgrey section__description">
+          This site is completely serverless.  It utilizes a number of AWS services 
+          that will scale as required and are extremely low cost. Serverless technology
+          allows us to extend our desire for modularized code to our architecture as well.
+          Below is a diagram of what the infrastructure for this application looks like.
+          <br><br>
+          From a development perspective, a push to the master branch for my <a href="https://github.com/mitch292/portfolio" target="_blank">portfolio repository</a>
+          will kick off the build process.  To facilitate the various tasks I'm using CodePipeline,
+          a CI/CD tool.  Another service, CodeBuild will run the automated tests, bundle the code and 
+          finaly post the result to a S3 bucket.  Upon the post to the S3 bucket a Lambda function will 
+          run and deploy the application to the S3 bucket hosting the static web application.   
+          <br><br>
+          From a users perspective, the domain is hosted via Route53, an AWS DNS solution.  This domain
+          points to a CloudFront distribution, or a cache, with a TTL set for 24 hours.  Every 24 hours
+          it will look for changes to the application in the S3 bucket hosting the production code.
+        </p>
+        <img class="architecture-image" src="images/appArchitecture.png">
     
     <script type="text/javascript" src="dist/bundle.js">
     </script>
