@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ExampleWork from './example-work.jsx';
-import { flixMix, highlights, study } from './projectDescriptions.js';
+import { flixMix, highlights, study, peddle } from './projectDescriptions.js';
 
 const myWork = [
   {
@@ -33,6 +33,16 @@ const myWork = [
     },
     href: 'http://study.andrewmitchell.io',
     projectDescription: study
+  },
+  {
+    title: 'Peddle',
+    image: {
+      desc: 'Peddle',
+      src: 'images/peddle.png',
+      comment: ''
+    },
+    href: 'http://justpeddle.com',
+    projectDescription: peddle
   }
 ]
 
