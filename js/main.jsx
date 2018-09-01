@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ExampleWork from './example-work.jsx';
 import { flixMix, highlights, study, peddle } from './projectDescriptions.js';
-
+//
 const myWork = [
   {
     title: 'FlixMix',
