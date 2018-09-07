@@ -92,12 +92,12 @@
           Below is a diagram of what the infrastructure for this application looks like.
           <br><br>
           From a development perspective, a push to the master branch for my <a href="https://github.com/mitch292/portfolio" target="_blank">portfolio repository</a>
-          will kick off the build process.  To facilitate the various tasks I'm using CodePipeline,
+          will kick off the build process.  To facilitate the various tasks, I'm using CodePipeline,
           a CI/CD tool.  Another service, CodeBuild will run the automated tests, bundle the code and 
-          finaly post the result to a S3 bucket.  Upon the post to the S3 bucket a Lambda function will 
+          finally post the result to a S3 bucket.  Upon the post to the S3 bucket a Lambda function will 
           run and deploy the application to the S3 bucket hosting the static web application.   
           <br><br>
-          From a users perspective, the domain is hosted via Route53, an AWS DNS solution.  This domain
+          From a user's perspective, the domain is hosted via Route53, an AWS DNS solution.  This domain
           points to a CloudFront distribution, or a cache, with a TTL set for 24 hours.  Every 24 hours
           it will look for changes to the application in the S3 bucket hosting the production code.
         </p>
