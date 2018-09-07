@@ -25,7 +25,7 @@ module.exports = {
     goods.  The application uses  React on the front end with Redux for state management,
     Node with Express for the Server and a PostgreSQL database.  The application is hosted on
     AWS and was designed with both scalability and durability in mind.  The server sits in an 
-    auto scaling group behind a Elastic Load Balancer.  The image upload is handled via a 
+    auto scaling group behind an Elastic Load Balancer.  The image upload is handled via a 
     lambda function and the files are stored in a S3 bucket.  Reads to the database are
      also directed to a read replica. Please check it out!`
 }
