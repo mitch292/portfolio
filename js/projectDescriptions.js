@@ -9,8 +9,8 @@ module.exports = {
     out or share your playlists!`,
   highlights: `Highlights is a very straight forward application.
     It's a one stop shop for all your sporting highlights.  It's great 
-    if you want to catch up on the previos day baseball or the past
-    weekend of soccer.  The application uses React om the front end, 
+    if you want to catch up on the previous day's baseball or the past
+    weekend of soccer.  The application uses React on the front end, 
     Node with Express on the server, and a PostgreSQL database.  The application
     is hosted via AWS.  Enjoy the highlights!`,
   study: `Study is an application to find and review study locations, but
